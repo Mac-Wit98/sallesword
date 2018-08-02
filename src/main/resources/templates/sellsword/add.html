@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Najemnik</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Sellsword++</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/customer/form">Add customers</a></li>
+                <li><a href="/sellsword/add">Add sellsword</a></li>
+                <li><a href="/sellsword/all">All sellsword</a></li>
+                <li><a href="/customer/all">All customer</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <form th:action="@{/sellsword/add}" th:object="${sellsword}" method="post">
+                <div class="form-group">
+                    <h1 style="width:800px; margin: 0 auto;">Dodaj Najemnika</h1>
+                    <label for="sellswordName">Imię</label>
+                    <input type="text" class="form-control" id="sellswordName" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="sellswordSurname">Nazwisko</label>
+                    <input type="text" class="form-control" id="sellswordSurname" name="surname">
+                </div>
+                <div class="form-group">
+                    <label>Opis</label>
+                    <textarea name="Description" class="form-control" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="sellswordSurname">Wynagrodzenie</label>
+                    <input type="text" class="form-control" id="sellswordSallary" name="sallary">
+                </div>
+                <label>Wybierz zleceniodawce i zadanie</label>
+                <select th:field="*{customer}">
+                    <option th:each="customer: ${customers}"
+                            th:value="${customer.id}"
+                            th:text="${customer}">Customer
+                    </option>
+                </select>
+                <button type="submit" class="btn btn-lg btn-primary btn-animated">Dodaj</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

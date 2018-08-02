@@ -1,0 +1,16 @@
+
+.bodx{
+    background-color: #896bb3;
+}
+.textdiv{
+    background-color: #b3adad;
+    width: 520px;
+    font-size: large;
+    position: center;
+    text-align: center;
+    border: 2px solid red;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
