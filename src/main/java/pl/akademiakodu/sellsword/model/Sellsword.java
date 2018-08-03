@@ -70,6 +70,6 @@ public class Sellsword {
 
     @Override
     public String toString() {
-        return getName() +" "+getSurname()+ ""+getDescription()+" "+getSallary();
+        return getName() +" "+getSurname()+" "+getDescription()+" "+getSallary()+"zł";
     }
 }

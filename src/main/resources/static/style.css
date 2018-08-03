@@ -8,9 +8,19 @@
     font-size: large;
     position: center;
     text-align: center;
-    border: 2px solid red;
+    border: 5px solid #45802b;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
+}
+.fullscreen_bg_hello {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-image: url("http://static.tumblr.com/aet6lr9/KaOn9ste8/got_7.jpg");
 }

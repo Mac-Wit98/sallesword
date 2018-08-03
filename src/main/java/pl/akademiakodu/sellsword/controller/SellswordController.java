@@ -16,21 +16,19 @@ public class SellswordController {
     private SellswordDao sellswordDao;
     @Autowired
     private CustomerDao customerDao;
+
     @GetMapping("/sellsword/add")
-    public String addSellsword(ModelMap modelMap){
+    public String addSellsword(ModelMap modelMap) {
         modelMap.put("sellsword", new Sellsword());
         modelMap.put("customers", customerDao.findAll());
         return "sellsword/add";
     }
+
     @PostMapping("/sellsword/add")
-    public String save(@ModelAttribute Sellsword sellsword, ModelMap modelMap){
+    public String save(@ModelAttribute Sellsword sellsword, ModelMap modelMap) {
         modelMap.put("sellsword", sellsword);
         sellswordDao.save(sellsword);
         return "sellsword/show";
     }
-    @GetMapping("/sellsword/all")
-    public  String allSellsword(ModelMap modelMap){
-        modelMap.addAttribute("sellswords", sellswordDao.findAll());
-        return "sellsword/all";
-    }
+
 }

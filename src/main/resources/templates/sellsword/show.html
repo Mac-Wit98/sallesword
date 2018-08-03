@@ -26,17 +26,16 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/customer/form">Add customers</a></li>
                 <li><a href="/sellsword/add">Add sellsword</a></li>
-                <li><a href="/sellsword/all">All sellsword</a></li>
                 <li><a href="/customer/all">All customer</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <div class="textdiv" style="width:800px; margin: 0 auto;">
-    <h1>Imię i nazwisko najemnika to:</h1>
-    <p th:text="${sellsword.name}"/>
-    <p th:text="${sellsword.surname}"></p>
-    <p th:text="${sellsword.sallary}"></p>
+    <h1>Imię, nazwisko i wynagrodzenie w zł najemnika to:</h1>
+    <p Imię th:text="${sellsword.name}"/>
+    <p Nazwisko th:text="${sellsword.surname}"></p>
+    <p Wynagrodzenie th:text="${sellsword.sallary}"></p>
     <h2>Zleceniodawca to:</h2>
     <p th:text="${sellsword.getCustomer()}"/>
 </div>

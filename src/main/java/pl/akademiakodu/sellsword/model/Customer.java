@@ -62,6 +62,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return getName() +" "+getSurname()+ ""+getQuest();
+        return getName() +" "+getSurname()+" "+getQuest();
     }
 }
